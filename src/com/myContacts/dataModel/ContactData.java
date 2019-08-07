@@ -52,12 +52,9 @@ public class ContactData {
 
     public void loadContacts() {
         try {
-            // First, create a new XMLInputFactory
             XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-            // Setup a new eventReader
             InputStream in = new FileInputStream(CONTACTS_FILE);
             XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
-            // read the XML document
             Contact contact = null;
 
             while (eventReader.hasNext()) {
@@ -65,7 +62,6 @@ public class ContactData {
 
                 if (event.isStartElement()) {
                     StartElement startElement = event.asStartElement();
-                    // If we have a contact item, we create a new contact
                     if (startElement.getName().getLocalPart().equals(CONTACT)) {
                         contact = new Contact("John", "Doe","12345", "notest notes");
                         continue;
@@ -101,7 +97,6 @@ public class ContactData {
                     }
                 }
 
-                // If we reach the end of a contact element, we add it to the list
                 if (event.isEndElement()) {
                     EndElement endElement = event.asEndElement();
                     if (endElement.getName().getLocalPart().equals(CONTACT)) {
@@ -111,7 +106,7 @@ public class ContactData {
             }
         }
         catch (FileNotFoundException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         catch (XMLStreamException e) {
             e.printStackTrace();
@@ -121,15 +116,11 @@ public class ContactData {
     public void saveContacts() {
 
         try {
-            // create an XMLOutputFactory
             XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
-            // create XMLEventWriter
             XMLEventWriter eventWriter = outputFactory
                     .createXMLEventWriter(new FileOutputStream(CONTACTS_FILE));
-            // create an EventFactory
             XMLEventFactory eventFactory = XMLEventFactory.newInstance();
             XMLEvent end = eventFactory.createDTD("\n");
-            // create and write Start Tag
             StartDocument startDocument = eventFactory.createStartDocument();
             eventWriter.add(startDocument);
             eventWriter.add(end);
@@ -163,12 +154,10 @@ public class ContactData {
 
         XMLEvent end = eventFactory.createDTD("\n");
 
-        // create contact open tag
         StartElement configStartElement = eventFactory.createStartElement("",
                 "", CONTACT);
         eventWriter.add(configStartElement);
         eventWriter.add(end);
-        // Write the different nodes
         createNode(eventWriter, FIRST_NAME, contact.getFirstName());
         createNode(eventWriter, LAST_NAME, contact.getLastName());
         createNode(eventWriter, PHONE_NUMBER, contact.getPhoneNumber());
@@ -184,14 +173,11 @@ public class ContactData {
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
         XMLEvent end = eventFactory.createDTD("\n");
         XMLEvent tab = eventFactory.createDTD("\t");
-        // create Start node
         StartElement sElement = eventFactory.createStartElement("", "", name);
         eventWriter.add(tab);
         eventWriter.add(sElement);
-        // create Content
         Characters characters = eventFactory.createCharacters(value);
         eventWriter.add(characters);
-        // create End node
         EndElement eElement = eventFactory.createEndElement("", "", name);
         eventWriter.add(eElement);
         eventWriter.add(end);
