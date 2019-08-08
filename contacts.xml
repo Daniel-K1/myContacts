@@ -6,4 +6,10 @@
 	<phone_number>4444444</phone_number>
 	<notes>notes notes</notes>
 </contact>
+<contact>
+	<first_name>Jan</first_name>
+	<last_name>Kowalski</last_name>
+	<phone_number>333333333</phone_number>
+	<notes>notes</notes>
+</contact>
 </contacts>
