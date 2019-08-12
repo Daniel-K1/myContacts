@@ -22,3 +22,8 @@ Simple popup menu with te following features:
 Simple window to get data from user (same component is used when user wants to edit contact)
 
 ![screenAddNewDialog](screens/2_addNewDialog.jpg)
+
+
+## Known bugs (to be fixed in next update)
+
+- InvocationTargetException when user wants to edit contat without selecting one (after he accepts warning message)
