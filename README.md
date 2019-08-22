@@ -4,6 +4,31 @@ MyContacts - Simple Contact Book with UI (JavaFX) using xml file as datasource -
 
 ![screen_Overall](screens/0_overall.jpg)
 
+
+
+### Requirements:
+
+- Java 11
+
+### How to run
+
+- clone and download repository
+- make sure you have switched to Java 11*
+- go to project file (/myContacts/) - make sure you see folder "target" and file "contacts.xml"
+- while in "myContacts" folder, run jar file from console using: 
+```
+java -jar target/mycontacts-1.0-SNAPSHOT.jar
+```
+
+
+
+
+
+_*due to an error in Maven plugin "maven-compiler-plugin" app doesn't work with Java 12 and higher so far_
+
+
+
+
 ## Features implemented so far
 
 ### File Menu

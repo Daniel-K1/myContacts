@@ -13,7 +13,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane fx:id="mainWindow"
-            fx:controller="com.myContacts.Controller"
+            fx:controller="com.danielk.mycontacts.Controller"
             xmlns:fx="http://javafx.com/fxml">
 
     <top>

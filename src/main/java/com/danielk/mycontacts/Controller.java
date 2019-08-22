@@ -1,11 +1,9 @@
-package com.myContacts;
+package com.danielk.mycontacts;
 
-import com.myContacts.dataModel.Contact;
-import com.myContacts.dataModel.ContactData;
-import javafx.event.ActionEvent;
+import com.danielk.mycontacts.dataModel.Contact;
+import com.danielk.mycontacts.dataModel.ContactData;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
@@ -40,11 +38,11 @@ public class Controller {
     @FXML
     public void openNewItemDialog() {
 
-        Dialog<ButtonType> dialog = new Dialog<ButtonType>();
+        Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(mainWindow.getScene().getWindow());
         dialog.setTitle("Add new contact");
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("addNewDialogWindow.fxml"));
+        loader.setLocation(getClass().getResource("/addNewDialogWindow.fxml"));
         try {
             dialog.getDialogPane().setContent(loader.load());
         } catch (IOException e) {
@@ -73,7 +71,7 @@ public class Controller {
     }
 
     @FXML
-    public void openEditDialog(ActionEvent event) {
+    public void openEditDialog() {
         Contact selectedContact = contactsTable.getSelectionModel().getSelectedItem();
 
         if (selectedContact == null) {
@@ -84,7 +82,7 @@ public class Controller {
             alert.showAndWait();
         }
 
-        Dialog<ButtonType> dialog = new Dialog<ButtonType>();
+        Dialog<ButtonType> dialog = new Dialog<>();
 
         dialog.initOwner(mainWindow.getScene().getWindow());
         dialog.setTitle("Edit contact");

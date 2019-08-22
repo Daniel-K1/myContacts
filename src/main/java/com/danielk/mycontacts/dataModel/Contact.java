@@ -1,4 +1,4 @@
-package com.myContacts.dataModel;
+package com.danielk.mycontacts.dataModel;
 
 import javafx.beans.property.SimpleStringProperty;
 

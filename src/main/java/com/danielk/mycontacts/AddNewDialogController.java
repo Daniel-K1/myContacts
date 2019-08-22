@@ -1,6 +1,6 @@
-package com.myContacts;
+package com.danielk.mycontacts;
 
-import com.myContacts.dataModel.Contact;
+import com.danielk.mycontacts.dataModel.Contact;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -18,7 +18,7 @@ public class AddNewDialogController {
     @FXML
     private TextField notesField;
 
-    public Contact getNewContact(){
+    Contact getNewContact(){
 
         String firstName=firstNameField.getText();
         String lastName=lastNameField.getText();
@@ -29,7 +29,7 @@ public class AddNewDialogController {
     }
 
 
-    public void editContact(Contact editedContact){
+    void editContact(Contact editedContact){
 
         firstNameField.setText(editedContact.getFirstName());
         lastNameField.setText((editedContact.getLastName()));
@@ -37,7 +37,7 @@ public class AddNewDialogController {
         notesField.setText(editedContact.getNotes());
     }
 
-    public void updateContact(Contact selectedContact) {
+    void updateContact(Contact selectedContact) {
 
         selectedContact.setFirstName(firstNameField.getText());
         selectedContact.setLastName(lastNameField.getText());

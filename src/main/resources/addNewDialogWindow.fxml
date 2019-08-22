@@ -8,7 +8,7 @@
 
 <DialogPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.myContacts.AddNewDialogController">
+            fx:controller="com.danielk.mycontacts.AddNewDialogController">
 
     <headerText>
         Please input new contact data
