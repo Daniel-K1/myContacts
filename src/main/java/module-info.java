@@ -5,6 +5,7 @@ module com.danielk.mycontacts {
     requires javafx.controls;
     requires javafx.base;
     requires org.apache.logging.log4j;
+    requires org.slf4j;
     exports com.danielk.mycontacts.dataModel;
     exports com.danielk.mycontacts;
 

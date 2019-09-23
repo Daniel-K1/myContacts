@@ -2,8 +2,8 @@ package com.danielk.mycontacts.dataModel;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventReader;
@@ -34,7 +34,7 @@ public class ContactData {
 
     private ObservableList<Contact> contacts;
 
-    private final static Logger LOG= LogManager.getLogger();
+    private final static Logger LOG= LoggerFactory.getLogger(ContactData.class);
 
     public ContactData() {
 
