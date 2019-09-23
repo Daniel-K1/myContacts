@@ -58,22 +58,6 @@ private SimpleStringProperty notes= new SimpleStringProperty("");
         return notes.get();
     }
 
-    public SimpleStringProperty firstNameProperty() {
-        return firstName;
-    }
-
-    public SimpleStringProperty lastNameProperty() {
-        return lastName;
-    }
-
-    public SimpleStringProperty phoneNumberProperty() {
-        return phoneNumber;
-    }
-
-    public SimpleStringProperty notesProperty() {
-        return notes;
-    }
-
     @Override
     public String toString() {
         return "Contact{" +
