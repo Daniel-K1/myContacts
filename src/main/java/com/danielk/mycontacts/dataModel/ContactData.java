@@ -2,6 +2,8 @@ package com.danielk.mycontacts.dataModel;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventReader;
@@ -31,6 +33,8 @@ public class ContactData {
     private static final String NOTES = "notes";
 
     private ObservableList<Contact> contacts;
+
+    private final static Logger LOG= LogManager.getLogger();
 
     public ContactData() {
 
@@ -140,12 +144,10 @@ public class ContactData {
             eventWriter.close();
         }
         catch (FileNotFoundException e) {
-            System.out.println("Problem with Contacts file: " + e.getMessage());
-            e.printStackTrace();
+            LOG.error("Problem with Contacts file: " + e.getMessage());
         }
         catch (XMLStreamException e) {
-            System.out.println("Problem writing contact: " + e.getMessage());
-            e.printStackTrace();
+            LOG.error("Problem with Contacts file: " + e.getMessage());
         }
     }
 

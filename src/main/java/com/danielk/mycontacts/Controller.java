@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -22,6 +24,8 @@ public class Controller {
     BorderPane mainWindow;
 
     private ContactData data;
+
+    private final static Logger LOG= LogManager.getLogger();
 
     public void initialize() {
 
@@ -46,8 +50,7 @@ public class Controller {
         try {
             dialog.getDialogPane().setContent(loader.load());
         } catch (IOException e) {
-            System.out.println("loading failed");
-            e.printStackTrace();
+            LOG.error("Loading failed"+e);
             return;
         }
 
@@ -91,8 +94,7 @@ public class Controller {
         try {
             dialog.getDialogPane().setContent(loader.load());
         } catch (IOException e) {
-            System.out.println("loading failed");
-            e.printStackTrace();
+            LOG.error("Loading failed: "+e);
             return;
         }
 
